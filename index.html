@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ojeswari - CSE Student</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #e0f7fa;
+    }
+    
+    /* Header and Navigation */
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
+      background-color: #e0f7fa;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cloud-left {
+      position: absolute;
+      top: 100px;
+      left: 50px;
+      width: 120px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50px;
+    }
+    
+    .cloud-right {
+      position: absolute;
+      top: 80px;
+      right: 80px;
+      width: 150px;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 60px;
+    }
+    
+    .mountain {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(#8d6e63 60%, #5d4037 60%, #5d4037 100%);
+      clip-path: polygon(0% 100%, 20% 50%, 40% 80%, 60% 40%, 80% 70%, 100% 20%, 100% 100%);
+    }
+    
+    .intro-text {
+      position: relative;
+      z-index: 10;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      color: #4db6ac;
+      margin-bottom: 20px;
+      font-weight: normal;
+      font-family: 'Brush Script MT', cursive;
+    }
+    
+    h2.subtitle {
+      font-size: 1.5rem;
+      color: #4db6ac;
+      margin-bottom: 50px;
+      font-weight: normal;
+    }
+    
+    /* Profile Section */
+    .profile {
+      text-align: center;
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 30px;
+      border: 5px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .greeting {
+      font-size: 2.5rem;
+      color: #4db6ac;
+      margin-bottom: 20px;
+    }
+    
+    .bio {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      padding: 0 20px;
+    }
+    
+    /* Skills Section */
+    .skills-section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    h2.section-title {
+      font-size: 2.5rem;
+      color: #4db6ac;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .skill-item {
+      display: flex;
+      margin-bottom: 60px;
+      align-items: center;
+    }
+    
+    .skill-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .skill-img-container {
+      flex: 1;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    .skill-img {
+      width: 80%;
+      max-width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .skill-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #263238;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    
+    .skill-details {
+      flex: 2;
+      padding: 0 20px;
+    }
+    
+    h3.skill-title {
+      font-size: 1.8rem;
+      color: #4db6ac;
+      margin-bottom: 15px;
+    }
+    
+    .skill-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 50px 20px 80px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .contact-heading {
+      font-size: 1.3rem;
+      color: #4db6ac;
+      margin-bottom: 15px;
+    }
+    
+    .contact-subheading {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: #4db6ac;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #26a69a;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #4db6ac;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    
+    .social-links {
+      margin-bottom: 20px;
+    }
+    
+    .social-link {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    
+    .social-link:hover {
+      color: #e0f7fa;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+    }
+    
+    /* Dots Divider */
+    .dots-divider {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #4db6ac;
+      border-radius: 50%;
+      margin: 0 6px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section with Animation -->
+  <header>
+    <div class="cloud-left"></div>
+    <div class="cloud-right"></div>
+    <div class="intro-text">
+      <h1>I'm Ojeswari Devi Kilari.</h1>
+      <h2 class="subtitle">a Programmer.</h2>
+    </div>
+    <div class="mountain"></div>
+  </header>
+  
+  <!-- Profile Section -->
+  <section class="profile">
+    <img class="profile-img" src="./download.jpg" alt="ojeswari's Profile Photo">
+    <h2 class="greeting">Hello.</h2>
+    <p class="bio">I am a Computer Science & Engineering student passionate about programming and software development. I'm currently learning data structures, algorithms, and web development. I'm excited about building applications that can make a positive impact on people's lives.</p>
+  </section>
+  
+  <!-- Dots Divider -->
+  <div class="dots-divider">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2 class="section-title">My Skills</h2>
+    
+    <!-- Programming Skill -->
+    <div class="skill-item">
+      <div class="skill-img-container">
+        <img class="skill-img" src="./programmer.jpg" alt="Programming Setup">
+      </div>
+      <div class="skill-details">
+        <h3 class="skill-title">Programming</h3>
+        <p class="skill-description">I started learning to code during my first year of college. I enjoy solving complex problems through programming. I'm proficient in C++, Java, and Python, and I've completed several projects implementing data structures and algorithms.</p>
+      </div>
+    </div>
+    
+    <!-- Web Development Skill -->
+    <div class="skill-item">
+      <div class="skill-img-container">
+        <div class="skill-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="#4db6ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 12L12 16L16 12" stroke="#4db6ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 8H16" stroke="#4db6ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="skill-details">
+        <h3 class="skill-title">Web Development</h3>
+        <p class="skill-description">I'm passionate about creating responsive web applications. I've learned HTML, CSS, and JavaScript, and I'm currently exploring React.js for frontend development. I enjoy bringing designs to life and creating intuitive user interfaces.</p>
+      </div>
+    </div>
+    
+    <!-- Database Management Skill -->
+    <div class="skill-item">
+      <div class="skill-img-container">
+        <div class="skill-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 8C16.4183 8 20 6.65685 20 5C20 3.34315 16.4183 2 12 2C7.58172 2 4 3.34315 4 5C4 6.65685 7.58172 8 12 8Z" stroke="#4db6ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 5V19C4 20.6569 7.58172 22 12 22C16.4183 22 20 20.6569 20 19V5" stroke="#4db6ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 12C4 13.6569 7.58172 15 12 15C16.4183 15 20 13.6569 20 12" stroke="#4db6ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="skill-details">
+        <h3 class="skill-title">Database Management</h3>
+        <p class="skill-description">I have experience working with database systems and understanding data relationships. I've worked with MySQL and MongoDB, and I'm familiar with designing efficient database schemas for various applications.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Dots Divider -->
+  <div class="dots-divider">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2 class="section-title">Get In Touch</h2>
+    <h3 class="contact-heading">If you're interested in tech projects or collaboration.</h3>
+    <p class="contact-subheading">Looking for teammates for hackathons? Want to collaborate on a project? I'm always open to learning and creating together!</p>
+    <a href="mailto:kilariojeswaridevi@example.com" class="btn">CONTACT ME</a>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="#" class="social-link">LinkedIn</a>
+      <a href="#" class="social-link">GitHub</a>
+      <a href="#" class="social-link">Twitter</a>
+    </div>
+    <p class="copyright">© Ojeswari devi Kilari 2025</p>
+  </footer>
+</body>
+</html>

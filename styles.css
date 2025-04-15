@@ -1,0 +1,240 @@
+/* Base Styles */
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #4a4a4a;
+    --background-color: #f9f9f9;
+    --accent-color: #e6e6fa;
+    --text-color: #333333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+  
+  h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+  }
+  
+  section, header, footer {
+    padding: 30px;
+  }
+  
+  /* Profile Section */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--accent-color);
+    padding: 50px 30px;
+  }
+  
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 5px solid white;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-content h2 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #5650d8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+  }
+  
+  /* About Section */
+  .about {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  /* Skills Section */
+  .skills {
+    background-color: #f8f8f8;
+  }
+  
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+  }
+  
+  .skill-item {
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  
+  .skill-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* Contact Section */
+  .contact {
+    background-color: white;
+  }
+  
+  .contact-info {
+    margin-bottom: 20px;
+  }
+  
+  .contact-info p {
+    margin-bottom: 10px;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+  }
+  
+  .social-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: #5650d8;
+  }
+  
+  .social-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .profile {
+        flex-direction: row;
+        text-align: left;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    .profile-image {
+        margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    section, header, footer {
+        padding: 25px;
+    }
+  }
